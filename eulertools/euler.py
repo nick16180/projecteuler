@@ -45,7 +45,7 @@ class EulerProblem:
 			self.durations.append(tend - tstart)
 			bar.next()
 		bar.finish()
-		self.durations_mean = mean(self.durations)
+		self.durations_mean = round(mean(self.durations), 5)
 		logging.info(
 			'solution: %s in avg %s seconds' % 
 			(self.solution, self.durations_mean)

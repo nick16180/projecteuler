@@ -5,8 +5,8 @@ from typing import Tuple, List
 def read_data(s:str) -> List[List[int]]:
 	"""Read the list of numbers as a 2D array
 	"""
-	d = s.split('\n') # split on each newline
-	d = [row for row in d if len(row.strip()) > 0]
+	# split on each newline
+	d = [row for row in s.split('\n') if len(row.strip()) > 0]
 	result = []
 	for row in d:
 		result.append([int(r) for r in row.split(' ')])

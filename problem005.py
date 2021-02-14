@@ -81,7 +81,7 @@ p.problem = problem
 p.date_solved = '2021-01-29'
 
 if __name__ == '__main__':
-	p.run(10)
+	p.run(10, n=1)
 	assert p.solution == 2520, 'Result incorrect'
 
 	# test

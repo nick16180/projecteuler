@@ -22,9 +22,9 @@ disableShare: false
 
 Below is the source code for my solution. When possible, I tried to make the solutions dynamic to allow for arbitrary inputs.
 
-%source%
-
 [See on GitHub](https://github.com/nick16180/projecteuler)
+
+%source%
 
 Below is a list of durations for each run of the solution. The website stipulates that the solutions should run in under 1 second on a modern machine.
 

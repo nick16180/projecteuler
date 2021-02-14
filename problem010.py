@@ -1,7 +1,6 @@
 from eulertools import EulerProblem
 import numpy as np
 from typing import List
-from math import log
 
 def prime_list(n:int) -> List[int]:
 	"""Input n>=6, Returns a array of primes, 2 <= p < n
@@ -30,7 +29,7 @@ p.problem = problem
 p.date_solved = '2021-01-30'
 
 if __name__ == '__main__':
-	p.run(10)
+	p.run(10, n=1)
 	assert p.solution == 17, 'Result incorrect'
 
 	# test
