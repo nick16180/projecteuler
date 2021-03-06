@@ -5,7 +5,7 @@ from math import log
 
 def prime_list(n:int) -> List[int]:
 	"""Input n>=6, Returns a array of primes, 2 <= p < n
-	   source: https://stackoverflow.com/questions/2068372/fastest-way-to-list-all-primes-below-n/3035188
+	source: https://stackoverflow.com/questions/2068372/fastest-way-to-list-all-primes-below-n/3035188
 	"""
 	sieve = np.ones(n//3 + (n % 6 == 2), dtype=np.bool)
 	for i in range(1, int(n ** 0.5) // 3 + 1):

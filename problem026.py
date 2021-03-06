@@ -2,6 +2,15 @@ from eulertools import EulerProblem
 import numpy as np
 from typing import List
 
+def gcd(a:int, b:int) -> int:
+	"""Computes between greatest common divisor 2 numbers.
+	source: https://en.wikipedia.org/wiki/Euclidean_algorithm
+	"""
+	if a == 0:
+		return b
+	else:
+		return gcd(b % a, a)
+
 def prime_list(n:int) -> List[int]:
 	"""Input n>=6, Returns a array of primes, 2 <= p < n
 	source: https://stackoverflow.com/questions/2068372/fastest-way-to-list-all-primes-below-n/3035188
@@ -16,21 +25,28 @@ def prime_list(n:int) -> List[int]:
 			2, 3, ((3 * np.nonzero(sieve)[0][1:] + 1) | 1)
 	]
 
-def problem(args:int) -> int:
-	"""Find the nth prime. Simplified by using bounds on the limit needed to find that prime.
-	source: https://en.wikipedia.org/wiki/Prime_number_theorem
+def problem(args:None) -> int:
+	"""Finds the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 	"""
-	return sum(prime_list(args))
+	r = 0
+	primes = prime_list(1000)
+	order = 0
+	for p in primes:
+		for i in range(1, p):
+			if gcd(p, 10) == 1:
+				if (10 ** i) % p == 1:
+					order = max(order, i)
+					r = p if order == i else r
+					break
+	return r
 
 # set up problem
-problem_url = 'https://projecteuler.net/problem=10'
-p = EulerProblem('Summation of primes', problem_url, 2000000)
+problem_url = 'https://projecteuler.net/problem=26'
+p = EulerProblem('Reciprocal cycles', problem_url, None)
 p.problem = problem
-p.date_solved = '2021-01-30'
+p.date_solved = '2021-03-06'
 
 if __name__ == '__main__':
-	p.run(10, n=1)
-	assert p.solution == 17, 'Result incorrect'
 
 	# test
 	p.run(n=1)

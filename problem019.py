@@ -5,8 +5,7 @@ def lands_on_weekday(n):
 	return days[n % 7]
 
 def problem(args:None) -> int:
-	"""Count number of Sundays that occur on first month each year
-	during the 20th century.
+	"""Count number of Sundays that occur on first month each year during the 20th century.
 	"""
 	month_days = [31,28,31,30,31,30,31,31,30,31,30,31]
 	month_days_leap = [31,29,31,30,31,30,31,31,30,31,30,31]

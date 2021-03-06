@@ -1,5 +1,5 @@
 from eulertools import EulerProblem
-from typing import Tuple, List
+from typing import List
 
 def read_data(s:str) -> List[str]:
 	"""Read the list of numbers as array
